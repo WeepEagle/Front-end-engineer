@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      button {
+        width: 100px;
+        height: 100px;
+      }
+      .bg_tomato {
+        background-color: tomato;
+      }
+      .bg_black {
+        background-color: black;
+      }
+      .bg_white {
+        background-color: white;
+      }
+      .bg_skyblue {
+        background-color: skyblue;
+      }
+    </style>
+  </head>
+  <body>
+    <button></button>
+  </body>
+  <script>
+    var btn = document.querySelector("button");
+    btn.classList.add("bg_tomato");
+    btn.classList.add("bg_black");
+    // btn.classList.add("bg_skyblue");
+    btn.classList.remove("bg_black");
+    btn.classList.remove("bg_tomato");
+    btn.addEventListener("click", function () {
+      btn.classList.toggle("bg_tomato");
+      document.body.classList.toggle("bg_tomato");
+      //   btn.classList.toggle("bg_black");
+      //   btn.classList.toggle("bg_skyblue");
+    });
+  </script>
+</html>
