@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+      input {
+        vertical-align: text-top;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="cart-item-list">
+      <div class="select-all">
+        <input type="checkbox" class="checkall" />全选
+      </div>
+      <div class="cart-item check-cart-item">
+        <input type="checkbox" class="j-checkbox" />1
+      </div>
+      <div class="cart-item check-cart-item">
+        <input type="checkbox" class="j-checkbox" />2
+      </div>
+      <div class="cart-item check-cart-item">
+        <input type="checkbox" class="j-checkbox" />3
+      </div>
+      <div class="select-all">
+        <input type="checkbox" class="checkall" />全选
+      </div>
+    </div>
+    <!-- $('.cart-item-list').find('.j-cheakbox').prop('checked') = -->
+    <script>
+      $(function () {
+        // 1. 全选   全不选
+        $(".checkall").change(function () {
+          //   console.log($(this).prop("checked"));
+          // $('.cart-item-list').find('.j-cheakbox').prop('checked') =
+          console.log(
+            $(".j-checkbox, .checkall").prop("checked", $(this).prop("checked"))
+            //            ↑  这个逗号很重要
+          );
+        });
+        //
+
+        //
+
+        //
+
+        // 2. 若小复选框选中的个数等于 3 则全选被选上 ,  反之亦然
+        $(".j-checkbox").change(function () {
+          // console.log($(".j-checkbox"));
+          // console.log($(".j-checkbox:checked"));
+          // console.log($(".j-checkbox:checked").length);
+          if ($(".j-checkbox:checked").length == $(".j-checkbox").length) {
+            // $(".j-checkbox:checked").length  是选中的复选框的个数
+            // $(".j-checkbox").length  是所有复选框的个数
+            $(".checkall").prop("checked", true);
+          } else {
+            $(".checkall").prop("checked", false);
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

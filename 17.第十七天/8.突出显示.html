@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      body {
+        background-color: rgb(0, 0, 0);
+      }
+      .bg {
+        width: 600px;
+        height: 300px;
+        display: flex;
+        background-color: rgb(0, 0, 0);
+        margin: 20px auto;
+      }
+      .bg div {
+        flex: 25%;
+        /* background-color: skyblue; */
+        /* border: 1px solid tomato; */
+      }
+      .bg div img {
+        width: 100%;
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="bg">
+      <div><img src="../images/images/1008.jpg" alt="" /></div>
+      <div><img src="../images/images/1003.jpg" alt="" /></div>
+      <div><img src="../images/images/15010.jpg" alt="" /></div>
+      <div><img src="../images/images/103016.jpg" alt="" /></div>
+    </div>
+    <script>
+      // 程序入口
+      $(function () {
+        // $(".bg div").mouseover(function () {
+        //   $(this).siblings().stop().fadeTo(200, 0.2);
+        // });
+        // $(".bg div").mouseout(function () {
+        //   $(this).siblings().stop().fadeTo(200, 1);
+        // });
+        //
+        //
+        $(".bg div").hover(
+          function () {
+            $(this).siblings().stop().fadeTo(200, 0.2);
+          },
+          function () {
+            $(this).siblings().stop().fadeTo(200, 1);
+          }
+        );
+      });
+    </script>
+  </body>
+</html>

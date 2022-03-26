@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <script src="jquery.min.js"></script>
+  <style>
+    div {
+      width: 200px;
+      height: 200px;
+      background-color: tomato;
+    }
+  </style>
+</head>
+
+<body>
+  <div></div>
+  <video src="../images/test.mp4"></video>
+  <script>
+    // 1. DOM 对象 : 用原生js获取过来的对象就是DOM对象
+    //   var myDiv = document.querySelector("div"); //        myDiv 是 DOM 对象
+    //   console.dir(myDiv);
+    // 2. jQuery 对象 : 用jquery 方式获取过来的就是jquery对象     本质 : 通过$把DOM元素进行了包装
+    //   $("div"); //      $('div')  是一个jQuery 对象
+    //   console.dir($("div"));
+    // 3. jQuery 对象只能用jQuery 方法,    DOM 对象只能用原生的javaScirpt 属性和方法
+
+    //
+
+    //
+
+    //
+
+    //
+
+    // 1. DOM 对象  转换为 jQuery 对象
+    // 1).我们直接获取对象,得到的就是jQuery对象
+    //   $("video");
+    // 2).我们用原生js获取过来的DOM对象
+    //   var myvideo = document.querySelector("video");
+    //   myvideo.play();
+    //
+    //
+    //   $(myvideo); // ==> 这就转好了
+    //
+    //
+    //
+    // 2. jQuery 转为 DOM 对象
+    // $("video")[0].play();
+
+    $("video").get(0).play();
+  </script>
+</body>
+
+</html>

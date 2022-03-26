@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+  </head>
+  <body>
+    <input type="checkbox" checked="cheked" />
+    <a href="../images/bg.jpg"></a>
+    <img src="../images/4图.jpg" alt="" />
+    <div index="123">123</div>
+
+    <script>
+      // prop() 获取对象的固有属性
+      console.log($("a").prop("href"));
+      console.log($("img").prop("src"));
+      $("img").prop("src", "../images/bg.jpg");
+      $("input").change(function () {
+        console.log($(this).prop("checked"));
+      });
+      //
+
+      //
+
+      // attr() 获取对象的自定义属性
+      console.log($("div").attr("index"));
+      console.log($("div").attr("index", "456"));
+      console.log($("div").attr("index"));
+      console.log($("input").attr("checked"));
+      console.log($("a").attr("src"));
+      console.log($("div").prop("index"));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+      div {
+        width: 225px;
+        height: 200px;
+        background-color: tomato;
+      }
+    </style>
+  </head>
+  <body>
+    <button>显示</button>
+    <button>隐藏</button>
+    <button>切换</button>
+    <button>半透明</button>
+    <div></div>
+    <script>
+      // 程序入口
+      $(function () {
+        $("button")
+          .eq(0)
+          .click(function () {
+            $("div").fadeIn("slow");
+          });
+        $("button")
+          .eq(1)
+          .click(function () {
+            $("div").fadeOut("slow");
+          });
+        $("button")
+          .eq(2)
+          .click(function () {
+            $("div").fadeToggle(200);
+          });
+        $("button")
+          .eq(3)
+          .click(function () {
+            $("div").fadeTo(200, 0.6);
+          });
+      });
+    </script>
+  </body>
+</html>

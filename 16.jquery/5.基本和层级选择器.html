@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <div>我是div</div>
+    <!-- <div class="nav">我是nav div</div> -->
+    <p>我是p</p>
+    <ol>
+      <li>我是ol的li</li>
+      <li>我是ol的li</li>
+      <li>我是ol的li</li>
+      <li>我是ol的li</li>
+    </ol>
+    <ul>
+      <li>我是ul的li</li>
+      <li>我是ul的li</li>
+      <li>我是ul的li</li>
+      <li>我是ul的li</li>
+    </ul>
+    <script>
+      // 入口函数
+      $(function () {
+        // $(".nav");
+        // $("p");
+        // $("ul li");
+        // 1. 获取4个对象
+        $("div");
+        // 2. 设置背景颜色为紫色
+        $("div").css("backgroundColor", "black");
+      });
+    </script>
+  </body>
+</html>

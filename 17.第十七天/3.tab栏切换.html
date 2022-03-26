@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .tab {
+        width: 500px;
+        height: 30px;
+        margin: 50px auto;
+      }
+      ul {
+        list-style: none;
+      }
+      .tab_list {
+        overflow: hidden;
+      }
+      .tab_list ul {
+        display: flex;
+      }
+      .tab_list li {
+        flex: 1;
+        height: 30px;
+        line-height: 30px;
+        text-align: center;
+        cursor: pointer;
+      }
+      .tab_list .current {
+        background-color: tomato;
+        color: aliceblue;
+      }
+      .tab_con .item {
+        display: none;
+        width: 500px;
+        height: 200px;
+        background-color: rgb(111, 238, 107);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="tab">
+      <div class="tab_list">
+        <ul>
+          <li>商品介绍</li>
+          <li>规格和包装</li>
+          <li>售后保障</li>
+          <li>商品评价</li>
+          <li>手机社区</li>
+        </ul>
+      </div>
+
+      <div class="tab_con">
+        <div class="item" style="display: block">商品介绍模块内容</div>
+        <div class="item">规格和包装块内容</div>
+        <div class="item">售后保障模块内容</div>
+        <div class="item">商品评价模块内容</div>
+        <div class="item">手机社区模块内容</div>
+      </div>
+    </div>
+    <script>
+      // var lis = document.querySelector(".tab_list").querySelectorAll("li");
+      // var items = document.querySelectorAll(".item");
+      // for (let index = 0; index < lis.length; index++) {
+      //   // 利用 for 给 所有的 li 添加点击事件
+      //   lis[index].onclick = function () {
+      //     for (let index = 0; index < lis.length; index++) {
+      //       lis[index].className = "none";
+      //       items[index].style.display = "none";
+      //     }
+      //     this.className = "current";
+      //     items[index].style.display = "block";
+      //   };
+      // }
+
+      //
+
+      //
+
+      // 以上是 DOM 方法              以下是 jQuery 方法
+
+      $(function () {
+        // 1. 点击li 当前的li 添加current 类,其余的兄弟移除 类
+        $(".tab_list li").click(function () {
+          $(this).addClass("current").siblings().removeClass("current");
+          // 2. 点击的同时  得到index
+          var index = $(this).index();
+          // 3. 让相应的item 显示.其余的item隐藏
+          $(".tab_con .item")
+            .eq(index)
+            .slideDown("slow")
+            .siblings()
+            .slideUp("slow");
+        });
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .box {
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+        height: 3vw;
+        padding: 0 20vw;
+        background-color: tomato;
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 102%;
+        line-height: 2.8vw;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+      }
+      .box .cake {
+        flex: 20%;
+        width: 20vw;
+        height: 100%;
+
+        background-color: slateblue;
+        border: 1px solid tomato;
+      }
+      .cake li {
+        /* display: block; */
+        width: 100%;
+        height: 33%;
+        background-color: sandybrown;
+        border: 1px solid skyblue;
+      }
+      .cake ul {
+        display: none;
+        text-align: center;
+        width: 100%;
+        height: 9vw;
+      }
+      /* .cake:hover ul {
+        display: block;
+      } */
+      li:hover {
+        background-color: rgb(255, 119, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="box">
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      //   var nav = document.querySelector(".box");
+      //   var lis = nav.children; //四个小 li
+      //   for (let index = 0; index < lis.length; index++) {
+      //     //  给所有的 li 添加鼠标经过事件
+      //     lis[index].onmouseover = function () {
+      //       this.children[1].style.display = "block";
+      //     };
+      //     //  给所有的 li 添加鼠标离开事件
+      //     lis[index].onmouseout = function () {
+      //       this.children[1].style.display = "none";
+      //     };
+      //   }
+
+      //
+
+      //
+
+      //
+      // 程序入口
+      // $(function () {
+      //   // 鼠标经过
+      //   $(".box>li").mouseover(function () {
+      //     // $(this) jQuery 的当前元素  this不加引号
+      //     // $(this).children("ul").css("display", "block"); // 也可以
+      //     // show()显示元素
+      //     // hide()隐藏元素
+      //     $(this).children("ul").show();
+      //   });
+
+      //   $(".box>li").mouseout(function () {
+      //     $(this).children("ul").hide();
+      //   });
+      // });
+      // 不用for循环,因为隐式迭代,给所有的亲儿子li绑定了事件
+
+      //
+
+      //
+      // $(function () {
+      //   $(".box>li").hover(
+      //     function () {
+      //       $(this).children("ul").show();
+      //     },
+      //     function () {
+      //       $(this).children("ul").hide();
+      //     }
+      //   );
+      // });
+      //
+
+      //
+      $(function () {
+        $(".box>li").hover(function () {
+          $(this).children("ul").stop().slideToggle(200);
+          // stop()  停止上一次的动画
+        });
+      });
+      //
+    </script>
+  </body>
+</html>
