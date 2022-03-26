@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background: url("../images/bgc/1-2.jpg") no-repeat center top;
+        background-color: rgb(10, 10, 10);
+        background-size: 100vw;
+      }
+      li {
+        list-style: none;
+      }
+      .baidu {
+        position: fixed;
+        bottom: 1vw;
+        right: 1vw;
+        display: flex;
+        background-color: rgb(0, 0, 0);
+        width: 38vw;
+        height: 3vw;
+        padding: 0.1vw;
+      }
+      .baidu li {
+        flex: 1;
+        margin: 0 0.1vw;
+        cursor: pointer;
+      }
+      .baidu img {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="baidu">
+      <li><img src="../images/bgc/1-2.jpg" alt="" /></li>
+      <li><img src="../images/bgc/2-2.jpg" alt="" /></li>
+      <li><img src="../images/bgc/3-2.jpg" alt="" /></li>
+      <li><img src="../images/bgc/4-2.jpg" alt="" /></li>
+      <li><img src="../images/bgc/5-2.jpg" alt="" /></li>
+      <li><img src="../images/bgc/6-2.jpg" alt="" /></li>
+      <li><img src="../images/bgc/7-2.jpg" alt="" /></li>
+      <li><img src="../images/bgc/8-2.jpg" alt="" /></li>
+    </ul>
+    <script>
+      // 写严谨一点 以便后面复用
+      var imgs = document.querySelector(".baidu").querySelectorAll("img");
+      //  用 for 就要用 querySelectorAll  <<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< important
+      for (let index = 0; index < imgs.length; index++) {
+        imgs[index].onclick = function () {
+          //   for (let index = 0; index < imgs.length; index++) {
+          //     document.body.style.backgroundImage = "";
+          //   }
+          // this.src 就是图片的路径
+          document.body.style.backgroundImage = "url(" + this.src + ")";
+        };
+      }
+    </script>
+  </body>
+</html>

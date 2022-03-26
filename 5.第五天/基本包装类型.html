@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //基本包装类型
+      var str = "andy";
+      console.log(str.length);
+      // ?1 对象(复杂数据类型)才有 属性 和 方法
+      // ?2 简单数据类型怎么会有length属性呢?
+      // 答 : js 后台进行了包装    ===> 即,把简单数据类型包装成复杂数据类型
+      //   =======详细过程如下=======
+      var temp = new String("andy"); // 吧简单数据类型包装成复杂数据类型
+      str = temp; // 把临时变量赋给str
+      temp = null; // 销毁临时变量
+      //
+      //
+      //
+      //
+      //有三种基本包装类型 String Number Boolean
+      //
+      //
+      // >字符串的不可变性<,你看着是变了,其实是指向了新的内存空间,旧的还在那里
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      ul {
+        list-style: none;
+      }
+
+      .box {
+        display: flex;
+        justify-content: space-around;
+        width: 100vw;
+        height: 3vw;
+        padding: 0 20vw;
+        background-color: tomato;
+      }
+      a {
+        display: block;
+        width: 100%;
+        height: 102%;
+        line-height: 2.8vw;
+        text-align: center;
+        text-decoration: none;
+        color: rgb(0, 0, 0);
+      }
+      .box .cake {
+        flex: 20%;
+        width: 20vw;
+        height: 100%;
+
+        background-color: slateblue;
+        border: 1px solid tomato;
+      }
+      .cake li {
+        /* display: block; */
+        width: 100%;
+        height: 100%;
+        background-color: sandybrown;
+        border: 1px solid skyblue;
+      }
+      .cake ul {
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        display: none;
+      }
+      /* .cake:hover ul {
+        display: block;
+      } */
+      li:hover {
+        background-color: rgb(255, 119, 0);
+      }
+    </style>
+  </head>
+  <body>
+    <ul class="box">
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+      <li class="cake">
+        <a href="#">微博</a>
+        <ul>
+          <li>私信</li>
+          <li>评论</li>
+          <li>@我</li>
+        </ul>
+      </li>
+    </ul>
+    <script>
+      var nav = document.querySelector(".box");
+      var lis = nav.children; //四个小 li
+      for (let index = 0; index < lis.length; index++) {
+        //  给所有的 li 添加鼠标经过事件
+        lis[index].onmouseover = function () {
+          this.children[1].style.display = "block";
+        };
+        //  给所有的 li 添加鼠标离开事件
+        lis[index].onmouseout = function () {
+          this.children[1].style.display = "none";
+        };
+      }
+    </script>
+  </body>
+</html>

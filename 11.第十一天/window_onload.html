@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 传统注册方式  只能写一次  注册多次以最后一次为准
+      //   window.onload = function () {
+      //     var btn = document.querySelector("button");
+      //     btn.addEventListener("click", function () {
+      //       alert("点击我");
+      //     });
+      //   };
+
+      //
+      // 新款注册方式  可以注册多次
+      window.addEventListener("load", function () {
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+          alert("点击我");
+        });
+      });
+
+      window.addEventListener("load", function () {
+        var btn = document.querySelector("button");
+        btn.addEventListener("click", function () {
+          alert("点击我123");
+        });
+      });
+      document.addEventListener("DOMContentLoaded", function () {
+        alert("点击我123456");
+      });
+      // load 等页面内容全部加载完毕 , 包含页面 dom 元素 图片 flash css 等等
+      // DOMContentLoaded 是 dom 加载完毕就可以执行 不包含 图片 flash css 等等
+    </script>
+
+    <button>点击</button>
+  </body>
+</html>

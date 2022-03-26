@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>我是div</div>
+    <span>我是span</span>
+    <script>
+      var div = document.querySelector("div");
+
+      console.log(div.nextSibling); // 获取所有类型的兄弟节点
+      console.log(div.previousSibling);
+      //  ie9 以上才支持
+      console.log(div.nextElementSibling); // 获取元素类型的兄弟节点
+      console.log(div.previousElementSibling);
+    </script>
+  </body>
+</html>

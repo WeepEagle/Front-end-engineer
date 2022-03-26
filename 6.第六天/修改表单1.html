@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>按钮</button>
+    <input type="text" value="输入内容" />
+    <script>
+      // 1
+      var btn = document.querySelector("button");
+      var input = document.querySelector("input");
+
+      // 2
+      var i = 1;
+      var time = [1, 2, 3];
+      btn.onclick = function () {
+        input.value = i++;
+        // var times_new = +new Date();
+        // time[i++] = times_new;
+        // var times_cha = times[i + 1] - times[i];
+        // input.value = times_cha;
+        // btn.disabled = true;  // 同下
+        this.disabled = true; // this 指向 时间函数的调用者 即 , '.'前面的元素
+      };
+    </script>
+  </body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      table {
+        width: 400px;
+        border-spacing: 0;
+        text-align: center;
+        margin: 50px auto;
+        border-right: 1px solid #ccc;
+      }
+      th {
+        height: 25px;
+        width: 100px;
+        border: 1px solid #ccc;
+        border-right: 0;
+        background-color: steelblue;
+      }
+      tr td {
+        height: 25px;
+        border-bottom: 1px solid #ccc;
+        border-left: 1px solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>姓名</th>
+          <th>科目</th>
+          <th>成绩</th>
+          <th>操作</th>
+        </tr>
+      </thead>
+      <tbody></tbody>
+    </table>
+    <script>
+      // 1. 学生数据
+      var datas = [
+        {
+          name: "王大拿",
+          subject: "Java",
+          score: 90,
+        },
+        {
+          name: "王二拿",
+          subject: "Java",
+          score: 80,
+        },
+        {
+          name: "王三拿",
+          subject: "Java",
+          score: 60,
+        },
+        {
+          name: "王四拿",
+          subject: "Java",
+          score: 70,
+        },
+        {
+          name: "王五拿",
+          subject: "Java",
+          score: 67,
+        },
+        {
+          name: "王六拿",
+          subject: "Java",
+          score: 87,
+        },
+        {
+          name: "王七拿",
+          subject: "Java",
+          score: 91,
+        },
+        {
+          name: "王八拿",
+          subject: "Java",
+          score: 99,
+        },
+      ];
+      // 2. 向 tbody 里面创建行 tr , 根据 length
+      var tbody = document.querySelector("tbody");
+      for (let index = 0; index < datas.length; index++) {
+        // 1. 创建 tr
+        var tr = document.createElement("tr");
+        tbody.appendChild(tr);
+        // 2. tr 里面创建 td     td 个数来源于 属性的个数
+        for (var key in datas[index]) {
+          // (key 是属性名 object[key] 是属性值)
+          // 创建 td
+          var td = document.createElement("td");
+          td.innerHTML = datas[index][key];
+          // 向 td 里面赋属性值
+          tr.appendChild(td);
+          // 向 tr 里面插入 td
+        }
+        // 3. 创建删除操作单元格
+        var td = document.createElement("td");
+        td.innerHTML = "<a href='javascript:;'>删除</a>";
+        tr.appendChild(td);
+      }
+      // 4. 添加删除操作
+      var as = document.querySelectorAll("a");
+      for (let index = 0; index < as.length; index++) {
+        as[index].onclick = function () {
+          tbody.removeChild(this.parentNode.parentNode);
+        };
+      }
+    </script>
+  </body>
+</html>

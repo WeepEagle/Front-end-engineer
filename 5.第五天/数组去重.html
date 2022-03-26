@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //数组去重
+      // 1. 把旧数组里面不重复的存到新数组里面
+      // 2. 核心算法 : 遍历旧数组,拿着旧数组的元素去查询新数组,如果不存在就存储,否则就忽略
+      // 3. 利用 arr_new.indexOf(元素),返回-1就存储下来
+      function unique(arr) {
+        var arr_new = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr_new.indexOf(arr[i]) === -1) {
+            arr_new.push(arr[i]);
+          }
+        }
+        return arr_new;
+      }
+      var arr_demo = unique(["c", "a", "z", "a", "x", "a", "x", "c", "b"]);
+      console.log(arr_demo);
+    </script>
+  </head>
+  <body></body>
+</html>

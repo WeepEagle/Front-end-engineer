@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: relative;
+        width: 400px;
+        /* height: 40px; */
+        border-bottom: 1px solid #ccc;
+        margin: 0 auto;
+      }
+      .box input {
+        width: 370px;
+        height: 30px;
+        border: 0;
+        outline: none;
+        /* 去掉选定的边框 */
+      }
+      .box img {
+        position: absolute;
+        top: 4px;
+        right: 0;
+        width: 24px;
+        /* background-color: #127633; */
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <label for=""> <img src="../images/popop.png" alt="" /> </label>
+      <input type="password" name="" id="" />
+    </div>
+    <script>
+      var box = document.querySelector(".box");
+      var input = document.querySelector("input");
+      var img = document.querySelector("img");
+      var flag = 0;
+
+      img.onclick = function () {
+        if (flag == 0) {
+          img.src = "../images/popop1.png";
+          input.type = "text"; //  带 ""
+          flag = 1;
+        } else {
+          img.src = "../images/popop.png";
+          input.type = "password";
+          flag = 0;
+        }
+      };
+    </script>
+  </body>
+</html>

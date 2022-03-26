@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      a {
+        float: right;
+        text-decoration: none;
+        color: tomato;
+        /* margin-right: 100px; */
+      }
+    </style>
+  </head>
+  <body>
+    <textarea name=""></textarea>
+    <button>发布</button>
+    <ul></ul>
+    <script>
+      //
+      // 写留言
+      // 1. 获取元素
+      var text = document.querySelector("textarea");
+      var but = document.querySelector("button");
+      var ul = document.querySelector("ul");
+      // 2. 添加事件
+      var i = 0;
+      but.onclick = function () {
+        // 3. 执行操作
+        if (text.value == "") {
+          alert("不能发表空留言.");
+          return false;
+        } else {
+          var li = document.createElement("li");
+          li.innerHTML =
+            ++i + ". " + text.value + "<a herf='JavaScript:;'>删除</a>";
+          //   ul.appendChild(li); //  新留言在后面
+          ul.insertBefore(li, ul.children[0]);
+        }
+        // 删除留言/////////////////////////////////////////////////////////////////////////////////////////////////
+        var as = document.querySelectorAll("a");
+        for (let index = 0; index < as.length; index++) {
+          as[index].onclick = function () {
+            // ul.removeChild(this.parentElement); // 这个也行
+            ul.removeChild(this.parentNode);
+          };
+        }
+        ///////////////////////为啥放这里就是能运行的//////////////
+        // 类似于埋地雷,在你指定的地方埋,但是刚开始没有a,所以没有给a埋上,你后面添加的a都没有埋地雷,所以点了没有用,放到添加留言这个事件里面,当这个地雷引爆时会执行这里的程序,查找所有的a为其埋地雷
+        // 答 : 因为你每次创建了新的留言后都需要给新的 a 添加事件 , 即 : 每增加一条留言 , 就查找页面内所有的 a 并为其添加事件
+      };
+
+      //
+      //
+      //
+    </script>
+  </body>
+</html>

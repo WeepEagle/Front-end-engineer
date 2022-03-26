@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        position: relative;
+        width: 100vw;
+        height: 10vw;
+        background-color: tomato;
+      }
+      .box .close_btn {
+        position: absolute;
+        display: block;
+        cursor: pointer;
+        /* cursor: pointer; 悬停小手 */
+        top: 1vw;
+        right: 1vw;
+        width: 3vw;
+        height: 3vw;
+        font-size: 3vw;
+        text-align: center;
+        line-height: 3vw;
+        border: 0.1vw solid #ccc;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <button class="close_btn">×</button>
+    </div>
+    <script>
+      var box = document.querySelector(".box");
+      var btn = document.querySelector(".close_btn");
+      btn.onclick = function () {
+        box.style.display = "none";
+      };
+    </script>
+  </body>
+</html>

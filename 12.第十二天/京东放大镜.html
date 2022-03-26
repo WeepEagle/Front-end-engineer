@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-image: url(../images/圣诞老人2.jpg);
+        background-size: auto 100%;
+        margin: 50px 0 0 50px;
+        cursor: move;
+      }
+      .box .mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(153, 205, 50, 0.493);
+        z-index: 5;
+      }
+      .box .big {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 420px;
+        width: 500px;
+        height: 500px;
+        background-color: tomato;
+        overflow: hidden;
+      }
+      .box .big .bigIMG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1000px;
+        width: 1000px;
+        overflow: hidden;
+      }
+      .box .big .bigIMG img {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="mask"></div>
+      <div class="big">
+        <div class="bigIMG">
+          <img src="../images/圣诞老人2.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      var box = document.querySelector(".box");
+      var mask = document.querySelector(".mask");
+      var big = document.querySelector(".big");
+      // 1. 鼠标进入盒子显示大图和放大镜
+      box.addEventListener("mouseover", function () {
+        mask.style.display = "block";
+        big.style.display = "block";
+      });
+      // 2. 鼠标离开盒子隐藏大图和放大镜
+      box.addEventListener("mouseout", function () {
+        mask.style.display = "none";
+        big.style.display = "none";
+      });
+      // 3. 放大镜在窗口呢内移动
+
+      box.addEventListener("mousemove", function (e) {
+        // 鼠标在盒子内的距离
+        var mouseInBox_x = e.pageX - this.offsetLeft;
+        var mouseInBox_y = e.pageY - this.offsetTop;
+        // mask在盒子内的距离
+        var maskInBox_x = mouseInBox_x - mask.offsetWidth / 2;
+        var maskInBox_y = mouseInBox_y - mask.offsetHeight / 2;
+        // mask移动的最大距离
+        var maskMax_x = this.offsetWidth - mask.offsetWidth;
+        var maskMax_y = this.offsetHeight - mask.offsetHeight;
+        // 让mask不出盒子
+        if (maskInBox_y <= 0) {
+          maskInBox_y = 0;
+        } else if (maskInBox_y >= maskMax_y) {
+          maskInBox_y = 200;
+        }
+        if (maskInBox_x <= 0) {
+          maskInBox_x = 0;
+        } else if (maskInBox_x >= maskMax_x) {
+          maskInBox_x = 200;
+        }
+        mask.style.top = maskInBox_y + "px";
+        mask.style.left = maskInBox_x + "px";
+        // 4. 大图跟随移动
+        var bigIMG = document.querySelector(".bigIMG");
+        console.log(bigIMG.offsetWidth, big.offsetWidth);
+        console.log(bigIMG.offsetHeight, big.offsetHeight);
+        console.log(bigIMG.style.left, bigIMG.style.top);
+        //       放大镜移动的距离/     ==   大图移动的距离/
+        //    放大镜最大的移动距离           大图最大的移动距离
+        //   大图移动的距离   ==  放大镜移动的距离    *  大图最大的移动距离      /         放大镜最大的移动距离
+        //         ?        ==     maskInBox_x    *     bigIMG_Max_x  (↓) /   maskMax_x
+        var bigIMG_Max_x = bigIMG.offsetWidth - big.offsetWidth;
+        var bigIMG_Max_y = bigIMG.offsetHeight - big.offsetHeight;
+        bigIMG.style.left = -((maskInBox_x * bigIMG_Max_x) / maskMax_x) + "px";
+        //          2200             200        1100              100
+        bigIMG.style.top = -((maskInBox_y * bigIMG_Max_y) / maskMax_y) + "px";
+        //     1000                 200      500                   100
+      });
+    </script>
+  </body>
+</html>

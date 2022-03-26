@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // instanceof 是运算符
+      //////////第一种方法////      console.log(obj instanceof Array);
+      var arr = []; //数组[]
+      var obj = {}; //对象{}
+      console.log(arr instanceof Array); //判断是否为数组
+      console.log(obj instanceof Array);
+      //
+      //
+      function reverse(arr) {
+        // if (arr instanceof Array) {
+        if (Array.isArray(arr)) {
+          var arr_new = [];
+          for (let i = arr.length - 1; i >= 0; i--) {
+            arr_new[arr_new.length] = arr[i];
+          }
+          return arr_new;
+        } else {
+          return "请输入[1,2,3]这种格式的数组.";
+        }
+      }
+      var arr = reverse([12, 234, 321, 343, 434343, 343, 343, 34, 0]);
+      console.log(arr);
+      //
+      //
+      ////////第二种方法////Array.isArray();
+      console.log(Array.isArray(arr));
+      console.log(Array.isArray(obj));
+    </script>
+  </head>
+  <body></body>
+</html>

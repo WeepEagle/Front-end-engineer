@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .box {
+        position: relative;
+        width: 400px;
+        height: 400px;
+        background-image: url(../images/圣诞老人2.jpg);
+        background-size: auto 100%;
+        margin: 50px 0 0 50px;
+        cursor: move;
+      }
+      .box .mask {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 200px;
+        height: 200px;
+        background-color: rgba(153, 205, 50, 0.493);
+        z-index: 5;
+      }
+      .box .big {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 420px;
+        width: 500px;
+        height: 500px;
+        background-color: tomato;
+        overflow: hidden;
+      }
+      .box .big .bigIMG {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 1000px;
+        width: 1000px;
+        overflow: hidden;
+      }
+      .box .big .bigIMG img {
+        height: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <div class="mask"></div>
+      <div class="big">
+        <div class="bigIMG">
+          <img src="../images/圣诞老人2.jpg" alt="" />
+        </div>
+      </div>
+    </div>
+    <script>
+      // 1. 鼠标经过 box 显示 mask , big
+      var box = document.querySelector(".box");
+      var mask = document.querySelector(".mask");
+      var big = document.querySelector(".big");
+      var bigIMG = document.querySelector(".bigIMG");
+
+      box.addEventListener("mouseover", function () {
+        mask.style.display = "block";
+        big.style.display = "block";
+      });
+
+      // 2. 鼠标离开 box 隐藏 mask , big
+      box.addEventListener("mouseout", function () {
+        mask.style.display = "none";
+        big.style.display = "none";
+      });
+      // 3. 让mask跟随鼠标
+      box.addEventListener("mousemove", function (e) {
+        var maskInBox_x = e.pageX - box.offsetLeft - mask.offsetWidth / 2;
+        var maskInBox_y = e.pageY - box.offsetTop - mask.offsetHeight / 2;
+        var maskMax_x = box.offsetWidth - mask.offsetWidth;
+        var maskMax_y = box.offsetHeight - mask.offsetHeight;
+        //并在box内移动
+        if (maskInBox_x <= 0) {
+          maskInBox_x = 0;
+        } else if (maskInBox_x >= maskMax_x) {
+          maskInBox_x = maskMax_x;
+        }
+
+        if (maskInBox_y <= 0) {
+          maskInBox_y = 0;
+        } else if (maskInBox_y >= maskMax_y) {
+          maskInBox_y = maskMax_y;
+        }
+        mask.style.left = maskInBox_x + "px"; // 永远忘记写 px ! ! !
+        mask.style.top = maskInBox_y + "px";
+        // 4. 让bigIMG跟随mask移动
+        //         maskInBox_x                                   maskMax_x
+        //    --------------------------      ==       -------------------------------
+        //         bigIMGInbig_x == ?                           bigIMGMax_x
+        var bigIMGMax_x = bigIMG.offsetWidth - big.offsetWidth;
+        var bigIMGMax_y = bigIMG.offsetHeight - big.offsetHeight;
+
+        var bigIMGInbig_x = -((maskInBox_x * bigIMGMax_x) / maskMax_x) + "px";
+        var bigIMGInbig_y = -((maskInBox_y * bigIMGMax_y) / maskMax_y) + "px";
+
+        bigIMG.style.left = bigIMGInbig_x;
+        bigIMG.style.top = bigIMGInbig_y;
+      });
+    </script>
+  </body>
+</html>

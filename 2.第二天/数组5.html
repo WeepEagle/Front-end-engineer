@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //方法一：
+      // var arr = [31, 45, 23, 6, 2, 5, 7, 324, 756, 5, 2, 45, 7, 5];
+      // var arr_2 = [];
+      // var j = 0;
+      // for (var i = 0; i < arr.length; i++) {
+      //   if (arr[i] >= 10) {
+      //     arr_2[j] = arr[i];
+      //     j++;
+      //   }
+      // }
+      // console.log(arr_2);
+      //
+      //
+      //
+      //方法二：
+      // var arr = [31, 45, 23, 6, 2, 5, 7, 324, 756, 5, 2, 45, 7, 5];
+      // var arr_2 = [];
+      // console.log(arr_2);
+      // console.log(arr_2.length);
+      // for (var i = 0; i < arr.length; i++) {
+      //   if (arr[i] >= 10) {
+      //     arr_2[arr_2.length] = arr[i];
+      //   }
+      // }
+      // console.log(arr_2);
+      //
+      //
+      //
+      //
+      //
+      // var arr = [2, 0, 6, 1, 77, 0, 52, 0, 25, 7];
+      // var arr_2 = [];
+      // console.log(arr_2);
+      // console.log(arr_2.length);
+      // for (var i = 0; i < arr.length; i++) {
+      //   if (arr[i] != 0) {
+      //     arr_2[arr_2.length] = arr[i];
+      //   }
+      // }
+      // console.log(arr_2);
+      //
+      //
+      //
+      //
+      var arr = ["red", "green", "blue", "pink", "purple",'black'];
+      var arr_2 = [];
+      // var j = arr.length - 1;
+      for (var i = arr.length - 1; i >= 0; i--) {
+        arr_2[arr_2.length] = arr[i];
+      }
+      console.log(arr_2);
+    </script>
+  </head>
+  <body></body>
+</html>

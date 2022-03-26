@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 常见的键盘事件
+      // 1. keyup 键盘弹起的时候触发
+      // 1. keydown 键盘按下的时候触发
+      // 1. keypress 键盘按下的时候触发
+      document.addEventListener("keydown", function () {
+        console.log(123);
+      });
+      document.onkeypress = function () {
+        console.log(123);
+      };
+
+      // 三个按键的执行顺序是   keydown   keypress  keyup
+    </script>
+  </body>
+</html>

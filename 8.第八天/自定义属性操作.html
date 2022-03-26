@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="demo" index="123" class="wahaha"></div>
+    <script>
+      var div = document.querySelector("div");
+      // 1. element.属性
+      //    获取自带的系统属性
+      //   alert(div.id);
+      // 2. element.getAttribute('属性') Attribute 属性
+      //    获取自定义的属性
+      //   alert(div.getAttribute("id"));
+      //   alert(div.index);
+      //   alert(div.getAttribute("index"));
+
+      //
+      // 一. 设置元素属性值
+      // 1. element.属性='值'
+      //   div.id = "text";
+      //   div.className = "navs";
+      // 2. element.setAttribute('属性','值')
+      //  主要针对自定义属性
+      //   div.setAttribute("index", "text");
+      div.setAttribute("class", "ppt");
+
+      //
+      //
+      // 二. 移除自定义属性
+      div.removeAttribute("index");
+      div.removeAttribute("class");
+      div.removeAttribute("id");
+    </script>
+  </body>
+</html>

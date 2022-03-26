@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="time">2019-9-9</div>
+    <ul>
+      <li>1你bu好1</li>
+      <li>22</li>
+      <li>33</li>
+    </ul>
+    <ol id="ol">
+      <li>o1你好1</li>
+      <li>o22</li>
+      <li>o33</li>
+    </ol>
+    <div class="box">盒子1</div>
+    <div class="box">盒子2</div>
+    <div class="nav">
+      <ul id="nav">
+        <li></li>
+        <li></li>
+        <li></li>
+      </ul>
+    </div>
+    <script>
+      // 1. 因为我们文档页面从上往下加载 , 所以先要有标签,然后才能有script
+      // 2.
+      // 3. 参数是'字符串'
+      var timer = document.getElementById("time");
+      console.log(timer);
+      console.log(typeof timer);
+      // 5. console.dir  打印我们返回的元素对象 更好的查看里面的属性和方法
+      console.dir(timer);
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      // 1. 返回的是  获取过来元素对象的集合  以伪数组的形式存储
+      var lis = document.getElementsByTagName("li");
+      console.dir(lis);
+      console.dir(lis[0]);
+      // 2. 依次打印里面的元素对象可以采用遍历的方式
+      for (let index = 0; index < lis.length; index++) {
+        console.log(lis[index]);
+      }
+      // 3. 只有一个li返回的还是伪数组
+      // 4. 没有li返回的还是伪数组[]
+      //   var oll = document.getElementsByTagName("ol");
+      //   console.log(oll[0].getElementsByTagName("li"));
+      var ol = document.getElementById("ol");
+      console.log(ol.getElementsByTagName("li"));
+      //
+      //
+      //
+      //
+      // h5新增获取元素的方式
+      // 1. 通过类名 getElementsByClassName
+      var boxs = document.getElementsByClassName("box");
+      console.log(boxs);
+      // 2. querySelector 返回指定选择器的第一个元素对象
+      var firstBox = document.querySelector(".box"); //可以选择类  .
+      console.log(firstBox);
+      var nav = document.querySelector("#nav"); //可以选择id   #
+      console.log(nav);
+      var li = document.querySelector("li"); //可以选择页面中的第一个li
+      console.log(li);
+      // 2. querySelectorAll 返回指定选择器的所有元素对象集合
+      var allBox = document.querySelectorAll(".box"); //可以选择页面中的第一个li
+      console.log(allBox);
+      var lis = document.querySelectorAll("li"); //可以选择页面中所有的li
+      console.log(lis);
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      // 1. 获取body 元素
+      var bodyEle = document.body;
+      console.log(bodyEle);
+      console.dir(bodyEle);
+      console.log("........................................");
+      // 2. 获取html 元素
+      var htmlEle = document.documentElement;
+      console.log(htmlEle);
+      console.dir(htmlEle);
+    </script>
+  </body>
+</html>

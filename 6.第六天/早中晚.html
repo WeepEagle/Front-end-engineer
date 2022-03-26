@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        text-align: center;
+      }
+      div img {
+        width: 400px;
+        /* height: 200px; */
+      }
+    </style>
+  </head>
+  <body>
+    <div>
+      <p>你好</p>
+      <img src="../images/下雪.gif" alt="" title="你好" />
+    </div>
+    <script>
+      var div = document.querySelector("div");
+
+      var p = document.querySelector("p");
+
+      var img = document.querySelector("img");
+
+      var dates = new Date();
+      var hh = dates.getHours();
+      hh = 19;
+      if (hh < 12) {
+        p.innerHTML = "上午好";
+        img.src = "../images/下雪i.gif";
+        img.title = "你还没起床";
+      } else if (hh < 13) {
+        p.innerHTML = "中午好";
+        img.src = "../images/下雪.gif";
+        img.title = "哈哈哈";
+      } else if (hh < 18) {
+        p.innerHTML = "下午好";
+        img.src = "../images/圣诞老人.jpg";
+        img.title = "滚犊子";
+      } else {
+        p.innerHTML = "晚上好";
+        img.src = "../images/圣诞老人2.jpg";
+        img.title = "睡觉";
+      }
+    </script>
+  </body>
+</html>

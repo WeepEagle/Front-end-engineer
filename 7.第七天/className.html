@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 100px;
+        height: 100px;
+        background-color: slateblue;
+      }
+      .change {
+        background-color: steelblue;
+        color: aliceblue;
+        font-size: 25px;
+        margin-top: 100px;
+      }
+    </style>
+  </head>
+  <body>
+    <div>123123</div>
+    <script>
+      var test = document.querySelector("div");
+      test.onclick = function () {
+        // this.style.backgroundColor = "purple";
+        // this.style.*****;
+        // this.style.*****;
+        // this.style.*****;
+        // this.style.*****;
+        // this.style.*****;
+        // this.style.*****;
+        //  这样写太麻烦要写好多 js 代码    你直接进行以下操作
+        this.className = "change";
+        //  一句话就可以完成
+        //  原理是 给 div 加了个类名 类名的样式已经提前写好了
+        //  如果之前有类名  ,  就会覆盖之前的类名   请注意
+        //  如果想保留原先的类名 . 你在新的类名前面添加上你想保留的类名即可
+      };
+    </script>
+  </body>
+</html>

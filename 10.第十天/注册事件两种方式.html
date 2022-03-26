@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>传统注册事件</button>
+    <button>方法监听注册事件</button>
+    <button>传统监听注册事件</button>
+    <script>
+      var btns = document.querySelectorAll("button");
+      // 1. 传统方式注册事件
+      btns[0].onclick = function () {
+        alert("传统");
+      };
+      btns[0].onclick = function () {
+        alert("传统2");
+      };
+      // 传统注册方式只能注册一个事件 , 即使多次添加 , 后面的也会覆盖前面的
+      // 没有兼容性问题
+      //
+      //
+      //
+      // 2. 事件监听注册事件
+      btns[1].addEventListener("click", function () {
+        alert("监听");
+      });
+      btns[1].addEventListener("click", function () {
+        alert("监听2");
+      });
+      // 监听注册方式可以注册多个事件 , 并且后面的不会覆盖前面的
+      // ie9以上才支持
+      //
+      //
+      //
+      //
+      // 3. attachEvent  ie9 以前才支持   现在了解,不使用
+      btns[2].attachEvent("onclick", function () {
+        alert("旧监听3");
+      });
+    </script>
+  </body>
+</html>

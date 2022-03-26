@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      img {
+        position: absolute;
+      }
+    </style>
+  </head>
+  <body>
+    <img src="../images/popop.png" alt="" />
+    <script>
+      // 常见的键盘事件
+      // 1. keyup 键盘弹起的时候触发
+      // 1. keydown 键盘按下的时候触发
+      // 1. keypress 键盘按下的时候触发
+      var img = document.querySelector("img");
+      var y = 0;
+      var x = 0;
+      document.addEventListener("keydown", function (e) {
+        console.log(e.key);
+        switch (e.key) {
+          case "ArrowUp":
+            img.style.top = --y * 10 + "px";
+            break;
+
+          case "ArrowDown":
+            img.style.top = ++y * 10 + "px";
+            break;
+
+          case "ArrowLeft":
+            img.style.left = --x * 10 + "px";
+            break;
+
+          case "ArrowRight":
+            img.style.left = ++x * 10 + "px";
+            break;
+        }
+      });
+
+      // 三个按键的执行顺序是   keydown   keypress  keyup
+      // keyup  和  keydown 不区分大小写
+    </script>
+  </body>
+</html>

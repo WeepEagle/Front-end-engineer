@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <style>
+      body {
+        background-color: #fff;
+      }
+    </style>
+  </head>
+  <body>
+    <button>按钮1</button><button>按钮2</button><button>按钮3</button
+    ><button>按钮4</button><button>按钮5</button>
+    <script>
+      //  //  //  //  //  //  //  //  排他思想  //  //  //  //  //  //  //
+      //  首先排除其他人的样式 , 然后在设置自己的样式 , 这个思想就是  排他思想
+
+      var btns = document.getElementsByTagName("button");
+
+      for (let index = 0; index < btns.length; index++) {
+        // btns 是伪数组 , 里面的元素是 btns[index]
+        btns[index].onclick = function () {
+          // 1. 我们把所有的按钮的颜色去掉
+          for (let index = 0; index < btns.length; index++) {
+            btns[index].style.backgroundColor = "";
+          }
+          // 2. 再让当前元素的背景变色
+          this.style.backgroundColor = "tomato";
+        };
+      }
+    </script>
+  </body>
+</html>

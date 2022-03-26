@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+    <a href="list.html">点击我去往列表页</a>
+    <button>前进</button>
+    <script>
+      var btn = document.querySelector("button");
+      btn.addEventListener("click", function () {
+        // window.history.forward(); // 前进
+        history.go(1); //  同上
+      });
+
+      console.log(location.search);
+      // 1. 去掉   ?   用 substr(元素下标,几个)
+      var user_name = location.search;
+      user_name = user_name.substr(1, user_name.length - 1);
+      user_name = user_name.substr(0, user_name.length - 2);
+      console.log(user_name);
+      // 2. 利用   =   把字符串分割为数组   split('=')
+      var user_and_name = [];
+      user_and_name = user_name.split("=");
+      console.log(user_and_name);
+      var uname = user_and_name[1];
+      console.log(uname);
+      var div = document.querySelector("div");
+      div.innerHTML = uname;
+    </script>
+  </body>
+</html>

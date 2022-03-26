@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        margin: 50px auto;
+        width: 500px;
+        text-align: center;
+        border-spacing: 0;
+        /* 去掉边框间的距离 */
+        border-right: 1px solid rgb(206, 206, 206);
+      }
+      tr {
+        overflow: hidden;
+      }
+      th,
+      td {
+        padding: 0px 0 1px 0;
+      }
+      th {
+        border: 1px solid rgb(206, 206, 206);
+        border-right: 0;
+      }
+      td {
+        border-bottom: 1px solid rgb(206, 206, 206);
+        border-left: 1px solid rgb(206, 206, 206);
+      }
+      .highlight {
+        background-color: rgba(255, 99, 71, 0.63);
+      }
+      input {
+        vertical-align: middle;
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th><input type="checkbox" name="" id="j_cbAll" /></th>
+          <th>名称</th>
+          <th>净值</th>
+          <th>浮盈</th>
+          <th>交易量</th>
+          <th>净流入</th>
+        </tr>
+      </thead>
+      <tbody id="j_tb">
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td><input type="checkbox" /></td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var trs = document.querySelector("tbody").querySelectorAll("tr");
+      for (let index = 0; index < trs.length; index++) {
+        trs[index].onmouseover = function () {
+          this.className = "highlight";
+        };
+        trs[index].onmouseout = function () {
+          this.className = "";
+        };
+      }
+    </script>
+    <script>
+      var j_cbAll = document.getElementById("j_cbAll"); //  全选按钮
+      var j_tbs = document.getElementById("j_tb").getElementsByTagName("input"); //下面的复选框
+      // 全选按钮的事件=============================================================
+      j_cbAll.onclick = function () {
+        // this.checked 复选框的状态 true 是选中  ///  false 是没有选中
+        for (let index = 0; index < j_tbs.length; index++) {
+          j_tbs[index].checked = this.checked;
+          // 一控制多
+        }
+      };
+      // 子选按钮的事件=============================================================
+
+      for (let index = 0; index < j_tbs.length; index++) {
+        // 给所有的子复选框添加点击事件
+        j_tbs[index].onclick = function () {
+          var flag = true;
+          // 这句 var flag = true; 必须放在这
+          for (let j = 0; j < j_tbs.length; j++) {
+            // 如果有一个子复选框为 false 则 flag 为 false
+            if (!j_tbs[j].checked) {
+              flag = false;
+              break;
+              // 只要有一个是 false 就跳出
+              // 提升效率
+            }
+          }
+          j_cbAll.checked = flag;
+        };
+      }
+    </script>
+  </body>
+</html>

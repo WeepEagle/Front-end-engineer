@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 有一个对象   判断是否有属性    对象名['属性名']
+      // var o = {
+      //   age: 18,
+      // };
+      // if (o["age"]) {
+      //   console.log("you");
+      // } else {
+      //   console.log("meiyou");
+      // }
+      //
+      //
+      //
+      //
+      var str = "qwertyqqeettrrr";
+      // 1.
+      // 核心算法.利用charAt().遍历字符串;
+      // 把每个字符存储给对象, 没有该属性, 属性的值就为1, 有了, 属性值就加1;
+      var o = {};
+      for (let i = 0; i < str.length; i++) {
+        var chars = str.charAt(i); //chars是字符
+        // == var chars = str[i];
+        if (o[chars]) {
+          //  o[chars] 得到的事属性值;即看这个属性有没有值
+          o[chars]++;
+        } else {
+          o[chars] = 1;
+        }
+      }
+      console.log(o);
+      // 2.
+      // 遍历对象
+      var max = 0;
+      var str2 = "";
+      for (const key in o) {
+        if (max < o[key]) {
+          max = o[key];
+          str2 = key;
+        }
+      }
+      console.log(str2 + ":" + max);
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+    </script>
+  </head>
+  <body></body>
+</html>

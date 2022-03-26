@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>123234</p>
+    <script>
+      //  document.write()  是直接将内容写入页面的内容流,但是,如果页面文档流执行完毕再使用它,会使页面重绘,即,丢失之前的页面内容
+      window.onload = function () {
+        document.write("<div>123</div>");
+      };
+      //  innerHTML 每次创建一个元素 == 拼接字符串 --- 效率较低
+      // 但是,但是,先将要创建的元素存在数组中,最后使用join()赋给innerHTML 效率就会很高甚至高于cE
+      //  document.createElement() 效率很高了,随意使用,单次和for都很快
+    </script>
+  </body>
+</html>

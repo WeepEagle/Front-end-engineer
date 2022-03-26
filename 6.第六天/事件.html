@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      // 事件就是 js 可以侦测到的行为  有了事件 js 就可以触发==响应机制
+    </script>
+  </head>
+  <body>
+    <button id="btn">唐伯虎</button>
+    <div class="div1">123</div>
+    <script>
+      // 点击一个按钮 , 弹出对话框
+      // 事件三要素 : 事件源   事件类型  事件处理程序
+      //
+      //  1. 事件源 : 被触发的对象  ==> 按钮
+      var btn = document.getElementById("btn");
+      //  2. 事件类型 : 怎么触发的  什么事件  比如 : 鼠标点击(onclick), 鼠标经过, 键盘按下    ==>   点击
+      //  3. 事件处理程序   通过一个函数赋值的方式完成  ==>  弹出对话框
+      btn.onclick = function () {
+        alert("嘿 ! 你好");
+      };
+      //
+      //
+      //
+    </script>
+    <script>
+      //   例子
+      var div = document.querySelector(".div1");
+      div.onclick = function () {
+        console.log("qiubit");
+        alert("div ! 你好");
+      };
+    </script>
+  </body>
+</html>

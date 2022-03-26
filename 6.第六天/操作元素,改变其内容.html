@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div,
+      p {
+        width: 300px;
+        height: 30px;
+        line-height: 30px;
+        color: #fff;
+        background-color: #9fb4e7;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <button>显示当前系统时间</button>
+    <div>时间</div>
+    <p>time</p>
+    <div class="wa">我哈哈</div>
+    <p class="pspan">
+      234234
+      <span> 123 </span>
+    </p>
+    <script>
+      function getTime() {
+        var date = new Date(); //返回系统当前时间
+        var YY = date.getFullYear();
+
+        var MM = date.getMonth() + 1;
+        MM = MM < 10 ? "0" + MM : MM;
+        var DD = date.getDate();
+        DD = DD < 10 ? "0" + DD : DD;
+        var ww_num = date.getDay();
+        var week = [
+          "星期日",
+          "星期一",
+          "星期二",
+          "星期三",
+          "星期四",
+          "星期五",
+          "星期六",
+        ];
+
+        var hh = date.getHours();
+        hh = hh < 10 ? "0" + hh : hh;
+        var mm = date.getMinutes();
+        mm = mm < 10 ? "0" + mm : mm;
+        var ss = date.getSeconds();
+        ss = ss < 10 ? "0" + ss : ss;
+        return (
+          YY +
+          "." +
+          MM +
+          "." +
+          DD +
+          "\t" +
+          week[ww_num] +
+          "\t" +
+          "\t" +
+          hh +
+          ":" +
+          mm +
+          ":" +
+          ss
+        );
+      }
+
+      getTime();
+      //
+      //
+      //
+      //
+
+      var btn = document.querySelector("button");
+      var div = document.querySelector("div");
+      btn.onclick = function () {
+        div.innerText = getTime();
+      };
+      //
+      //
+      //
+      //直接显示时间 , 不用点击
+      var p = document.querySelector("p");
+      p.innerText = getTime();
+      //
+      //
+      //
+      //
+      //  innerText 和 innerHTMl 的区别
+      var wa = document.querySelector(".wa");
+      // 1. innerText 不识别 html 标签   非标准   读取时: 去除 空格 和 换行
+      //   wa.innerText = "今天<strong>的</strong>时间是:2020-20-20";
+      // 2. innerHTMl 识别 html 标签  W3C 标准
+      wa.innerHTML = "今天<strong>的</strong>时间是:2020-20-20";
+
+      //
+      //
+      // 他们还可以读取
+      var ps = document.querySelector(".pspan");
+      console.log(ps.innerText); // 读取时: 去除 空格 和 换行
+      console.log(ps.innerHTML); // 读取时: 保留 空格 和 换行 和  标签
+    </script>
+  </body>
+</html>

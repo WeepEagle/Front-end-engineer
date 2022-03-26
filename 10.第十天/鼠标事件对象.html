@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 鼠标事件对象 mouseEvent
+      document.addEventListener("click", function (e) {
+        console.log(e.clientX);
+        console.log(e.clientY);
+        // 以上以可视区为准
+        console.log(e.pageX);
+        console.log(e.pageY);
+        // 以上以文档页面为准 经常使用
+        console.log(e.screenX);
+        console.log(e.screenY);
+        // 以上以电脑屏幕为准
+      });
+    </script>
+  </body>
+</html>

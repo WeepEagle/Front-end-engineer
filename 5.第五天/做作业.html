@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var str = "hfsdu8iyyr789234gh87g87g3eufgu8r4f32";
+      //1.字符串长度
+      //   console.log(str.length);
+      //2.取出指定位置的字符,     0,3,5,9
+      //   console.log(str.charAt(0));
+      //   console.log(str.charAt(3));
+      //   console.log(str.charAt(5));
+      //   console.log(str.charAt(9));
+      //3.字符是否存在,     i , 2, r
+      //   console.log(str.indexOf("i"));
+      //   console.log(str.indexOf("2"));
+      //   console.log(str.indexOf("r"));
+      //   console.log(str.indexOf("m"));
+      //4.替换指定字符,  g ==>22 , s ==> 11
+      //   while (str.indexOf("g") !== -1) {
+      //     str = str.replace("g", "!!");
+      //   }
+      //   console.log(str);
+
+      //5.截取字符串,   1~5
+      //   console.log(str.substring(1, 5));
+
+      //6.找出字符串中出现最多的字符和出现的次数
+      var obj = {};
+      for (let i = 0; i < str.length; i++) {
+        if (obj[str[i]]) {
+          obj[str[i]]++;
+        } else {
+          obj[str[i]] = 1;
+        }
+      }
+      console.log(obj);
+      var max = 0;
+      var chars = "";
+      for (const key in obj) {
+        if (max < obj[key]) {
+          max = obj[key];
+          chars = key;
+        }
+      }
+      console.log(chars + ":" + max);
+    </script>
+  </head>
+  <body></body>
+</html>

@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //1. 利用字面量来创建对象{}
+      //   var obj = {};   空的对象;
+      //   var obj = {
+      //     uname: "wahaha",
+      //     age: 18,
+      //     sex: "男",
+      //     sayHi: function () {
+      //       console.log("hi~");
+      //     },
+      //   };
+      //   ps:1). 属性或者方法采用键值对：键 （属性名）：值（属性值）
+      //   2).  多个属性或方法用逗号，隔开
+      //   3). 方法后面跟的是一个匿名函数
+      //2. 使用对象
+      //1). 调用对象的属性我们采用 对象名.属性名
+      //   console.log(obj.uname);
+
+      //2). 或者  对象名['属性名']
+      //   console.log(obj["age"]);
+      //3). 调用对象的方法  对象名.方法名();
+      //   obj.sayHi();
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //     变量，属性，函数，方法  的区别
+      // 1.变量和属性是相同的 他们都是用来存储数据的
+      //   var num = 10;
+      //   var obj = {
+      //     age: 18,
+      //   };
+      //   console.log(num);
+      //   console.log(obj.age);
+      //    变量  单独声明并赋值  使用时直接写变量名 单独存在
+      //    属性  在对象里面的，不需要声明，使用的时候必须是 对象.属性
+      //
+      //2. 函数和方法的相同点  都是实现某种功能 做某件事
+      // 函数是单独声明，单独调用，单独存在的   函数名（）；
+      // 方法实在对象里面  调用  对象.方法（）；
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      // 利用 new Object 创建对象
+      //   var obj = new Object(); //创建了一个新的对象
+      //   obj.uname = "wahaha";
+      //   obj.age = 18;
+      //   obj.sex = "男";
+      //   obj.sayHi = function () {
+      //     console.log("Hi");
+      //   };
+      // 1）我们是利用 等号= 复制的方法 添加对象的属性和方法的
+      // 2） 每个属性和方法用 ; 结束
+      //
+      //
+      //
+      // new Object();
+      //   var minren = new Object();
+      //   minren.uname = "鸣人";
+      //   minren.sex = "男";
+      //   minren.age = 19;
+      //   minren.skill = function () {
+      //     console.log("影分身术");
+      //   };
+      // 字面量创建对象
+      //   var zuozhu = {
+      //     uname: "佐助",
+      //     sex: "男",
+      //     age: 19,
+      //     skill: function () {
+      //       console.log("影分身术");
+      //     },
+      //   };
+      //
+      //
+      //
+      //
+      //
+      // 利用构造函数创建对象
+      // 构造函数的语法格式
+      //   function 构造函数名() {
+      //     this.属性 = 值;
+      //     this.方法 = function () {};
+      //   }
+      //   new 构造函数名();
+      //
+      //
+      //
+      // function Star(uname, age, sex) {
+      //   this.uname = uname;
+      //   this.age = age;
+      //   this.sex = sex;
+      //   this.singSong = function (song) {
+      //     console.log(song);
+      //   };
+      // }
+
+      // var ldh = new Star("刘德华", 18, "男");
+      // console.log(ldh.uname, ldh["sex"]);
+      // ldh.singSong("一把火");
+      //   var zxy = new Star("张学友", 19, "男");
+      //   zxy.singSong("留下来");
+      //
+      //
+      //
+      //
+      //
+      //
+      // 1. 构造函数首字母大写
+      // 2. 构造函数不需要return 就可以返回结果
+      // 3. 调用构造函数必须使用 new
+      // 4. 首先 new Star（） 调用时就  var ldh = new Star（）； 就行
+      // 5.  我们的属性和方法前面必须添加 this
+      //
+      //
+      //
+      //   function Hero(uname, type, blood, attack) {
+      //     this.uname = uname;
+      //     this.type = type;
+      //     this.blood = blood;
+      //     this.attack = attack;
+      //   }
+      //   var lianpo = new Hero("廉颇", "力量型", 500, "近战");
+      //   var houyi = new Hero("后裔", "射手型", 100, "近战");
+      //   console.log(houyi.type);
+      //
+      //
+      //
+      //
+      //
+      // new关键字执行过程
+      // 1.new 构造函数可以在内存中创建一个空的对象
+      // 2.this 就会指向刚才创建的空对象
+      // 3.执行构造函数里面的代码 给这个空对象添加属性和方法
+      // 4.返回这个对象
+      //
+      //
+      //
+      //
+      // 遍历对象     for  in
+      //   var obj = {
+      //     uname: "老师",
+      //     age: 18,
+      //     sex: "男",
+      //     play: function () {},
+      //   };
+      //   for (const k in obj) {
+      //     console.log(k, obj[k]); // k  变量  obj[k]   属性值
+      //   }
+      //你记住这么用就行了  里面的变量用  k  或者key
+
+      //
+      //
+      //
+      // 字面量
+      // var lianxiang = {
+      //   color: "银色",
+      //   weight: 1200,
+      //   brand: "联想",
+      //   model: "p9000y",
+      //   watchMovies: function () {
+      //     console.log("看电影");
+      //   },
+      //   listenMusic: function () {
+      //     console.log("听音乐");
+      //   },
+      //   playGame: function () {
+      //     console.log("玩游戏");
+      //   },
+      //   writeCode: function () {
+      //     console.log("敲代码");
+      //   },
+      // };
+      // lianxiang.listenMusic();
+      // lianxiang.playGame();
+      // lianxiang.watchMovies();
+      // lianxiang.writeCode();
+      // for (const key in lianxiang) {
+      //   console.log(key, lianxiang[key]);
+      // }
+
+      //new Object
+      // var but = new Object();
+      // but.width = 100;
+      // but.height = 200;
+      // but.bgc = "white";
+      // but.click = function (num) {
+      //   console.log(num + " of click");
+      // };
+      // but.click("two");
+      // for (const key in but) {
+      //   console.log(key, but[key]);
+      // }
+      //构造函数
+      // function Car(weight, color, brand) {
+      //   this.weight = weight;
+      //   this.color = color;
+      //   this.brand = brand;
+      //   this.carryPerson = function (num) {
+      //     console.log("我可以拉" + num + "个人");
+      //   };
+      //   this.carryGoods = function (num) {
+      //     console.log("可以拉" + num + "吨货");
+      //   };
+      //   this.plough = function (str) {
+      //     console.log("我" + str + "耕田");
+      //   };
+      // }
+      // var polo = new Car(1200, "white", "Volkswagen");
+      //   polo.carryPerson = 5;
+      //   polo.carryGoods = 1;
+      //   polo.plough = "不能";
+      // console.log(polo.brand);
+      // for (const key in polo) {
+      //   console.log(key, polo[key]);
+      // }
+      // polo.carryPerson(5);
+      // polo.carryGoods(2);
+      // polo.plough("不能");
+      // var tuolaji = new Car(2000,'red','Lamborghini');
+      // tuolaji.carryPerson(50);
+      // tuolaji.carryGoods(10);
+      // tuolaji.plough('能');
+      // for (const key in tuolaji) {
+      //   console.log(key,tuolaji[key]);
+      // }
+      //翻转数组
+      // function reverse(arr) {
+      //   var arr_new = [];
+      //   for (let i = arr.length - 1; i >= 0; i--) {
+      //     arr_new[arr_new.length] = arr[i];
+      //   }
+      //   return arr_new;
+      // }
+      // var arr = reverse([12, 234, 321, 343, 434343, 343, 343, 34, 0]);
+      // console.log(arr);
+      //冒泡
+      // function sort(arr) {
+      //   var temp = 0;
+      //   for (let i = 0; i < arr.length - 1; i++) {
+      //     for (let j = 0; j < arr.length - i - 1; j++) {
+      //       if (arr[j] < arr[j + 1]) {
+      //         temp = arr[j];
+      //         arr[j] = arr[j + 1];
+      //         arr[j + 1] = temp;
+      //       }
+      //     }
+      //   }
+      //   return arr;
+      // }
+      // var arr = sort([12, 9, 6, 233, 2, 5, 77, 3, 4, 66, 2, 4, 66]);
+      // console.log(arr);
+      //
+      //
+      //计算器
+      while (1) {
+        var num = prompt(
+          "欢迎使用简易计算器;\n1. 加法计算器;\n2. 减法计数器;\n3. 乘法计算器;\n4. 除法计算器;\n5. 退出;\n请输入您的选项;"
+        );
+        if (parseInt(num) == 5) {
+          break;
+        } else {
+          switch (parseInt(num)) {
+            case 1:
+              var num1 = prompt("请输入第一个数：");
+              var num2 = prompt("请输入第二个数：");
+              var sum = parseFloat(num1) + parseFloat(num2);
+              alert("和为：" + sum);
+              break;
+
+            case 2:
+              var num1 = prompt("请输入第一个数：");
+              var num2 = prompt("请输入第二个数：");
+              var sum = parseFloat(num1) - parseFloat(num2);
+              alert("差为：" + sum);
+              break;
+
+            case 3:
+              var num1 = prompt("请输入第一个数：");
+              var num2 = prompt("请输入第二个数：");
+              var sum = parseFloat(num1) * parseFloat(num2);
+              alert("积为：" + sum);
+              break;
+
+            case 4:
+              var num1 = prompt("请输入第一个数：");
+              var num2 = prompt("请输入第二个数：");
+              var sum = parseFloat(num1) / parseFloat(num2);
+              alert("商为：" + sum);
+              break;
+
+            default:
+              alert("输入错误请重新输入！");
+              break;
+          }
+        }
+      }
+    </script>
+  </head>
+  <body></body>
+</html>

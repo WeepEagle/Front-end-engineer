@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>11</li>
+      <li>12</li>
+      <li>13</li>
+      <li>14</li>
+      <li>15</li>
+    </ul>
+    <ol>
+      <li>21</li>
+      <li>22</li>
+      <li>23</li>
+      <li>24</li>
+      <li>25</li>
+    </ol>
+    <div class="demo">
+      <div class="box">
+        <span class="erweima">x</span>
+      </div>
+    </div>
+
+    <script>
+      var erweima = document.querySelector(".erweima");
+      //   parentNode只能得到爸爸
+      console.log(
+        erweima.parentNode.parentNode.parentNode.parentNode.parentNode
+          .parentNode
+      );
+      //
+      //
+      //
+      //
+      //   以前的方法  DOM 提供的API
+      var ul = document.querySelector("ul");
+      var lis = ul.querySelectorAll("li");
+      //   node 方法  childnodes 获取了所有的子节点 元素节点 文本节点 等等
+      console.log(ul.childNodes);
+      //   children  获取所有的 子元素 节点  ===>  实际开发常用
+      console.log(ul.children);
+      //
+      //
+      //
+      var ol = document.querySelector("ol");
+      console.log(ol.children[0]);
+      console.log(ol.children[ol.children.length - 1]);
+      console.log(ol.firstChild); // 所有节点 包括 text 等
+      console.log(ol.lastChild); // 同上
+      console.log(ol.firstElementChild); // 第一个元素节点  ie9 以上可用
+      console.log(ol.lastElementChild); // 同上
+    </script>
+  </body>
+</html>

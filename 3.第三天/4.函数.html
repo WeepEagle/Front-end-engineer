@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //函数的使用 ： 1.声明函数 2.调用函数 3. 什么是函数？
+      //1.声明函数
+      // function 函数名（）{
+
+      // }
+      //2.调用函数
+      // 函数名（）；
+      // 函数名一般为动词，执行驼峰法则
+      //
+      //1.求最大值
+      // var arr = [5, 2, 99, 101, 67, 77];
+      // function getMax(arr) {
+      //   var max = arr[0];
+      //   for (var i = 1; i < arr.length; i++) {
+      //     if (max < arr[i]) {
+      //       max = arr[i];
+      //     }
+      //   }
+      //   return max;
+      // }
+      // alert("big num is " + getMax([5, 2, 99, 101, 67, 77]));
+      //
+      //  return  只能返回一个值，有逗号，输出最后一个值
+      // 但是可以用数组来输出多个值
+      // function getResult(num1, num2) {
+      //   return [num1 + num2, num1 - num2, num1 * num2, num1 / num2];
+      // }
+      // alert(getResult(5, 2));
+
+      // arguments: 伪数组，具有数组的一些特性
+      // 1. length
+      // 2. []用索引方式存储
+      // 3. 没有真正数组的一些方法，pop(),push()等等
+      //
+      //
+      //翻转任意函数
+      // var app = [1, 2, 3, 4, 5, 6];
+      // var arr_new = [];
+      // function getFanZhuan() {
+      //   var arr_new = [];
+      //   for (var i = 0; i < arguments.length; i++) {
+      //     arr_new[i] = arguments[arguments.length - i - 1];
+      //   }
+      //   return arr_new;
+      // }
+      // arr_new = getFanZhuan(1, 2, 3, 4, 5, 6);
+      // console.log(arr_new);
+      //
+      //翻转函数
+      // function reverse(arr) {
+      //   var arr_new = [];
+      //   for (var i = arr.length - 1; i >= 0; i--) {
+      //     arr_new[arr_new.length] = arr[i];
+      //   }
+      //   return arr_new;
+      // }
+      // var app = [1, 2, 3, 4, 5, 6];
+      // var aww = ["12", "12", "324343", "343", "3423423232", "aas"];
+      // var arr = [];
+      // arr = reverse(aww);
+      // console.log(arr);
+      //
+      //
+      //冒泡函数
+      // function sort(arr) {
+      //   var temp = 0;
+      //   for (var i = 0; i < arr.length - 1; i++) {
+      //     for (var j = 0; j < arr.length - 1 - i; j++) {
+      //       if (arr[j] < arr[j + 1]) {
+      //         temp = arr[j];
+      //         arr[j] = arr[j + 1];
+      //         arr[j + 1] = temp;
+      //       }
+      //     }
+      //   }
+      //   return arr;
+      // }
+      // var arr = [1, 2, 3, 4, 5, 6, 7];
+      // var arr_new = [];
+      // arr_new = sort(arr);
+      // alert(arr_new);
+      //
+      //
+      //判断是否是闰年
+      function isRun(year) {
+        if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+          return true;
+        } else {
+          return false;
+        }
+      }
+      var year1 = 2020;
+      alert(isRun(1004));
+
+      //函数的两种声明方式
+      // 1.function name (params) {
+      //   return a;
+      // }
+      // 2. 匿名函数
+      //var name = function(){
+      //   return a;
+      // }
+      //name(); //    1.  name是变量名 不是函数名。 2. 类似声明变量，不同的是变量里面是值，函数表达式里面是函数
+      //
+      //1.全局变量  ：  浏览器关闭才会销毁
+      //ps:在函数内部没有 var 就直接使用的变量也属于全局变量
+      //2.局部变量  :   函数执行完就销毁
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+      //
+    </script>
+  </head>
+  <body></body>
+</html>

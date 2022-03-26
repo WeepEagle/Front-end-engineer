@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    你来复制我啊 ! ! !
+    <script>
+      document.addEventListener("contextmenu", function (e) {
+        // contextmenu 主要是用来控制右键菜单的,可以禁用
+        e.preventDefault();
+      });
+      // 禁止选中文字 selectstart
+      document.addEventListener("selectstart", function (e) {
+        e.preventDefault();
+      });
+    </script>
+  </body>
+</html>

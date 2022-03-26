@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .father {
+        position: relative;
+        width: 200px;
+        height: 200px;
+        background-color: tomato;
+        margin: 100px;
+        overflow: hidden;
+      }
+      .son {
+        width: 100px;
+        height: 100px;
+        background-color: sandybrown;
+        /* padding-top: 50px; */
+        /* border: 1px solid transparent; */
+        margin: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="father">
+      <div class="son"></div>
+    </div>
+    <script>
+      var father = document.querySelector(".father");
+      var son = document.querySelector(".son");
+      console.log(father.offsetTop); // 不带单位
+      console.log(father.offsetLeft);
+      console.log(son.offsetTop); // 以带有定位的父亲为准 , 否则以body为准
+      console.log(son.offsetLeft);
+      console.log(son.offsetParent); // 返回带有定位的父亲,否则返回body
+      console.log(son.parentElement); // 上一级的元素
+      console.log(son.parentNode); // 上一级的节点
+      console.log(son.offsetWidth); // 包含padding,border,width
+      console.log(son.offsetHeight);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //   var date = new Date(); //返回系统当前时间
+      //   console.log(date);
+      // function getTime() {
+      //   var date = new Date(); //返回系统当前时间
+      //   var hh = date.getHours();
+      //   hh = hh < 10 ? "0" + hh : hh;
+      //   var mm = date.getMinutes();
+      //   mm = mm < 10 ? "0" + mm : mm;
+      //   var ss = date.getSeconds();
+      //   ss = ss < 10 ? "0" + ss : ss;
+      //   console.log(hh + ":" + mm + ":" + ss);
+      // }
+      // getTime();
+      //
+      //获得总的毫秒数
+      var date = new Date();
+      console.log(date.valueOf()); //现在距离1970.1.1总的毫秒数
+      console.log(date.getTime());
+      //简单方法(最常用的写法)
+      var date1 = +new Date("1995-12-17 03:24:00");
+      console.log(date1);
+      //更简单的方法
+      console.log(Date.now());
+    </script>
+  </head>
+  <body></body>
+</html>

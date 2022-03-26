@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      table {
+        margin: 50px auto;
+        width: 500px;
+        text-align: center;
+        /* border-collapse:collapse; */
+        border-spacing: 0;
+        /* 去掉边框间的距离 */
+        /* border: 1px solid skyblue; */
+      }
+      tr {
+        overflow: hidden;
+      }
+      td {
+        border-bottom: 1px solid rgb(206, 206, 206);
+        margin: -2px;
+        padding: -1px;
+      }
+      .highlight {
+        background-color: rgba(255, 99, 71, 0.63);
+      }
+    </style>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr>
+          <th>代码</th>
+          <th>名称</th>
+          <th>净值</th>
+          <th>浮盈</th>
+          <th>交易量</th>
+          <th>净流入</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>0923451</td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td>0923451</td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td>0923451</td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td>0923451</td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td>0923451</td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+        <tr>
+          <td>0923451</td>
+          <td>华润万家</td>
+          <td>4563</td>
+          <td>5.33</td>
+          <td>5000万</td>
+          <td>2000万</td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var trs = document.querySelector("tbody").querySelectorAll("tr");
+      for (let index = 0; index < trs.length; index++) {
+        trs[index].onmouseover = function () {
+          this.className = "highlight";
+        };
+        trs[index].onmouseout = function () {
+          this.className = "";
+        };
+      }
+    </script>
+  </body>
+</html>

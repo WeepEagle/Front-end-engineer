@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var str = "12323445676890654238674525674564";
+      //我的
+      //   var temp = 0;
+      //   var index = 0;
+      //   while (1) {
+      //     index = str.indexOf("4", index);
+      //     if (index != -1) {
+      //       temp++;
+      //       console.log(index);
+      //       index = index + 1;
+      //     } else {
+      //       break;
+      //     }
+      //   }
+      //   console.log(temp);
+      //
+      //
+      //老师的
+      var index = str.indexOf("4");
+      var num = 0;
+      while (index !== -1) {
+        console.log(index);
+        num++;
+        index = str.indexOf("4", index + 1);
+      }
+      console.log(num);
+      //
+      //
+      //
+      //
+      //
+      console.log("num");
+      //
+      //作业
+      var arr = ["red", "blue", "red", "green", "pink", "red"];
+      var index = arr.indexOf("red");
+      var num = 0;
+      while (index !== -1) {
+        console.log("index = " + index);
+        num++;
+        index = arr.indexOf("red", index + 1);
+      }
+      console.log("num = " + num);
+    </script>
+  </head>
+  <body></body>
+</html>

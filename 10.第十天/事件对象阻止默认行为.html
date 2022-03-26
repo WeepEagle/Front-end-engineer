@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div>123</div>
+    <a href="http://www.baidu.com">baidu</a>
+    <form action="http://www.baidu.com">
+      <input type="submit" value="提交" name="sub" />
+    </form>
+    <script>
+      // 常见事件对象的属性和方法
+      // 1. 返回事件类型
+      var div = document.querySelector("div");
+      div.addEventListener("click", fn);
+      div.addEventListener("mouseover", fn);
+      div.addEventListener("mouseout", fn);
+      function fn(e) {
+        console.log(e.type);
+        // type.你做了什么操作
+      }
+
+      //
+      // 2. 阻止默认行为(事件)  让链接不跳转 或者让按钮不提交
+      var a = document.querySelector("a");
+      //   a.addEventListener("click", function (e) {
+      //     e.preventDefault();
+      //     //   e.preventDefault(); 阻止跳转的行为   dom 标准写法
+      //   });
+
+      //
+      // 阻止传统的注册方式
+      a.onclick = function (e) {
+        // 普通浏览器   e.preventDefault();  属性
+        // e.preventDefault();
+        // 低版本浏览器 ie6,7,8   e.returnValue;  方法
+        // e.returnValue;
+        //
+        // return false;  没有兼容性问题  注意后面的代码不执行  而且只限于传统的注册方式
+        return false;
+      };
+    </script>
+  </body>
+</html>

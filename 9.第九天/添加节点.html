@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>1</li>
+    </ul>
+    <script>
+      var ul = document.querySelector("ul");
+      // 1. 创建元素节点
+      var li = document.createElement("li");
+      li.innerHTML = "3";
+      // 2. 添加节点 node.appendChild(child)   node 父级 child 子集
+      //  也叫追加节点   追加到最后面
+
+      ul.appendChild(li); // 把 li 添加到 ul 的最后面
+      //
+      //
+      // 一. 在孩子的前面添加节点 node.insertBefore(child,指定元素)
+      var li_2 = document.createElement("li");
+      li_2.innerHTML = "我要当老大";
+      //
+      ul.insertBefore(li_2, ul.children[0]);
+      // 把 li_2 插到 ul 的第一个孩子前面
+      //
+      //
+      //
+      //  所以添加一个新元素分为两步
+      //  1. 创建元素
+      //  2. 插入元素
+    </script>
+  </body>
+</html>
