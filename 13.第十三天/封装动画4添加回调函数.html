@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100px;
+        height: 100px;
+        background-color: rgba(255, 99, 71, 0.554);
+      }
+      span {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 10px;
+        height: 10px;
+        background-color: rgb(0, 247, 255);
+        z-index: 5;
+      }
+    </style>
+  </head>
+  <body>
+    <div><span></span></div>
+    <span></span>
+    <button>蓝色的小盒子</button>
+    <button>往回走</button>
+    <script>
+      // 封装动画
+      function animate(obj, target, callback) {
+        // 多次点击会开启多个定时器,会叠加状态
+        // 解决方案,让元素只能开启一个定时器
+        clearInterval(obj.timer);
+        obj.timer = setInterval(function () {
+          // 缓动动画,步长,越来越小,步长公式: (目标值-现在的位置)/10
+          //------------------------------------
+          // var step = (target - obj.offsetLeft) / 10; 这句话有bug
+          // 修改为var step =Math.ceil((target - obj.offsetLeft) / 10) ;
+          // 向上取整
+          //----------------------------------------
+          //万一step是负呢? 所以要判断一下
+
+          var step = (target - obj.offsetLeft) / 15;
+          step = step > 0 ? Math.ceil(step) : Math.floor(step);
+          obj.style.left = obj.offsetLeft + step + "px";
+          if (obj.offsetLeft == target) {
+            clearInterval(obj.timer);
+            if (callback) {
+              callback();
+            }
+          }
+        }, 15);
+      }
+      var div = document.querySelector("div");
+      var spans = document.querySelectorAll("span");
+      var btns = document.querySelectorAll("button");
+
+      animate(spans[0], 500);
+      animate(div, 300, function () {
+        div.style.backgroundColor = "tomato";
+      });
+      // 多次点击会开启多个定时器,会叠加状态
+      btns[0].addEventListener("click", function () {
+        animate(spans[1], 400);
+      });
+      btns[1].addEventListener("click", function () {
+        animate(spans[1], 0);
+      });
+    </script>
+  </body>
+</html>

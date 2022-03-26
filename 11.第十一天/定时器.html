@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // 1. setTimeout
+      // 语法规范 : window.setTimeout(调用函数,延时时间)
+      // window可以省略
+      // 单位是毫秒 不写就是立刻执行
+      setTimeout(function () {
+        alert("时间到");
+      }, 2000);
+
+      function pop() {
+        alert("pop");
+      }
+      setTimeout(pop, 1000); // 推荐使用
+      setTimeout("pop()", 1000); // 不提倡
+      //
+      //
+      // 2. 页面中可能会有多个定时器,为防止出错,需要给定时器添加标识符
+      var timer1 = setTimeout(pop, 3000);
+      var timer2 = setTimeout(pop, 4000);
+    </script>
+  </body>
+</html>
