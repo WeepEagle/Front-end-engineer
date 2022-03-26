@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      var a = 10;
+      ++a;
+      var b = ++a + 2;
+      console.log(b);
+
+      var c = 10;
+      c++;
+      var d = c++ + 2;
+      console.log(d);
+
+      var e = 10;
+      var f = e++ + ++e;
+      console.log(f);
+
+      alert(18 == "18"); // 这是 true ! ! ! 默认会把字符串转换为数字型
+      alert(18 === "18"); //这叫 全等 啥都一样 数值,类型,
+      alert(18 === 18); // 你再全等 18 也等于 18
+    </script>
+  </head>
+  <body></body>
+</html>

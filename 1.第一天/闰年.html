@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script>
+      //       表达式1  &&  表达式2  ==    ???
+      //
+      //   逻辑  与  短路运算   if 表达式1 为 真 ,返回表达式2的值;
+      //                        if 表达式1 为 假 ,返回表达式1的值;
+      //
+      //
+      //       表达式1  ||  表达式2  ==    ???
+      //
+      //    逻辑  或  短路运算   if 表达式1  为  真 , 返回表达式1的值;
+      //                         if 表达式1  为  假 , 返回表达式2的值;
+      //
+      //
+      //
+      // var year = prompt("请输入年份:");
+      // if ((year % 4 == 0 && year % 100 != 0) || year % 400 == 0) {
+      //   alert("是闰年");
+      // } else {
+      //   alert("不是闰年");
+      // }
+
+      // var year = prompt("请输入姓名:");
+      // if (year == '刘德华') {
+      //   alert("中奖");
+      // } else {
+      //   alert("没有中奖");
+      // }
+
+      var score = prompt("请输入成绩:");
+      if (score >= 90) {
+        alert("A");
+      } else if (score >= 80) {
+        alert("B");
+      } else if (score >= 70) {
+        alert("C");
+      } else if (score >= 60) {
+        alert("D");
+      } else {
+        alert("E");
+      }
+    </script>
+  </head>
+  <body></body>
+</html>
