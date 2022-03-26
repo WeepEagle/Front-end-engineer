@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        var str = '<div>我是{{name}},今年{{age}}岁了</div>'
+
+        var pattern = /{{\s*([a-zA-Z]+)\s*}}/     //    /@/   @为要匹配的数据  \s* 中的的\s是去掉空格的意思 带 * 是去掉多个
+
+
+        var patternResult = null;
+
+        while (patternResult = pattern.exec(str)) {
+            str = str.replace(patternResult[0], patternResult[1])
+        }
+        console.log(str);
+
+    </script>
+</body>
+
+</html>

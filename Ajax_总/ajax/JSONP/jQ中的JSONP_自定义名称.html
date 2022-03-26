@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <script>
+        $.ajax({
+            url: 'http://www.liulongbin.top:3006/api/jsonp?name=zs&age=20',
+            // 我们要发起JSONP的数据请求
+            dataType: 'jsonp',
+            // 发送到服务器的参数名称 , 默认值为 callback
+            jsonp: 'callback',
+            // 自定义的回调函数名称 , 默认值为 JqueryXXX  格式
+            jsonpCallback: 'parsen',
+            success: function (res) {
+                console.log(res);
+            }
+        })
+    </script>
+
+
+</body>
+
+</html>

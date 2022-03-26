@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="axios.js"></script>
+</head>
+
+<body>
+    <script>
+        // 请求的 url 地址
+        var url = 'http://www.liulongbin.top:3006/api/get';
+        // 请求的对象
+        var paramsObj = {
+            name: 'zs',
+            age: 20
+        }
+        // 使用 axios .get() 发起 get 请求
+        axios.get(url, {
+            params: paramsObj
+        }).then(function (res) {
+            // res.data 才是服务器返回的数据   res 里面的数据全是 axios 封装的
+            var result = res.data
+            console.log(result);
+        })
+    </script>
+</body>
+
+</html>

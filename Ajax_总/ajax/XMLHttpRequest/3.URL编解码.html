@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        var str = '李钊大坏蛋'
+        var str_en = encodeURI(str)
+        console.log(str_en);
+        var str_de = decodeURI(str_en)
+        console.log(str_de);
+        console.log(decodeURI('%E6%9D%8E%E9%92%8A%E5%a4%A7%E5%9D%8F'));  // %E8%9B%8B
+    </script>
+</body>
+
+</html>

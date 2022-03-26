@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <style>
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        #angle {
+            position: absolute;
+        }
+    </style>
+</head>
+
+<body>
+    <img src="../../../images/popop1.png" alt="" id="angle">
+    <script>
+        $(function () {
+            // 获取图片元素
+            var angel = $("#angle")
+            // 监听文档的 mousemove 事件
+            //////////////////////////////////////////增加节流阀///
+            var timer = null; // 1. 预设一个节流阀
+            $(document).mousemove(function (e) {
+                /////////////////////////////////////////////判断节流阀是否为空///
+                if (timer) { // 3. 如果节流阀为空 , 则不返回   ,   节流阀有值  才返回
+                    return
+                }
+                timer = setTimeout(function () {
+                    // 设置图片的位置
+                    $(angel).css('left', e.pageX - 20 + 'px').css('top', e.pageY - 20 + 'px')
+                    timer = null
+                    // 2. 设置了鼠标跟随后 , 清空节流阀 , 方便下次开启
+                }, 15)
+
+
+            })
+        })
+    </script>
+</body>
+
+</html>

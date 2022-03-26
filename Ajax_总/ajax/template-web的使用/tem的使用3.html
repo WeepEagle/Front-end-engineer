@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- 1. 导入模板引擎 -->
+    <!-- 在 window 全局会多一个函数 template('模板的ID',渲染的数据) -->
+    <script src="template-web.js"></script>
+    <script src="jquery.min.js"></script>
+</head>
+
+<body>
+    <!-- 5. 渲染的位置 -->
+    <div id="container"></div>
+    <!-- 3. 定义模板 -->
+    <!-- 3.1. 模板的 html 结构 , 必须定义到 script 中 -->
+    <script type="text/html" id="tpl-user">
+        <div id="title">{{@ title}}</div>   
+        <!-- 以上要用到原文输出 , 值中包含 HTML 结构时要是用 @ title 才能使 HTML 标签正确显示出来 -->
+        <div>姓名 : <span id="name">{{name}}</span></div>
+        <div>年龄 : <span id="age">{{age}}</span></div>
+        <div>会员 : <span id="isVIP">{{if isVIP===true}}是{{else if isVIP===false}}否{{/if}}</span></div>
+        <!-- 以上 用到了 {{if val}} 要输出的内容 {{else if val2}} 要输出的内容 {{/if}}  -->
+        <!-- val , val2  都是判断条件 -->
+        <div>注册时间 : <span id="regTime">{{regTime | dateFormat}}</span></div>
+        <!-- 以上要用到过滤器 -->
+        <div>
+            爱好 :
+            <ul id="hobby">
+                {{each hobby}}
+                <li>{{$value}}</li>
+                {{/each}}
+
+                <!-- 以上 用到了 循环
+                {{each hobby}}
+                <li> {{$index}} {{$value}}</li>
+                {{/each}} -->
+            </ul>
+        </div>
+    </script>
+    <script>
+        // 过滤器
+        template.defaults.imports.dateFormat = function (date) {
+            var yy = date.getFullYear()
+            var mm = date.getMonth() + 1  // 月份要加 1
+            var dd = date.getDate()
+
+            return yy + '-' + mm + '-' + dd  // 一定要return 出去一个结果  不然没有值输出
+        }
+
+
+        // 2. 定义要渲染的数据
+        var data = {
+            title: '<h3>用户信息</h3>',  //          此处要用到原文输出 @...
+            name: 'zs',
+            age: '20',
+            isVIP: true,
+            regTime: new Date(),
+            hobby: ['吃饭', '睡觉', '打豆豆'] //  用到了 循环   {{each hobby}}   <li> {{$index}} {{$value}}</li>   {{/each}}
+
+        }
+
+        // 4. 调用 template 函数
+        var htmlStr = template('tpl-user', data)
+        // console.log(htmlStr);
+        // 5. 渲染的位置
+        $('#container').html(htmlStr)
+        //
+        //
+
+
+    </script>
+</body>
+
+</html>
